@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="madLib">
 <head>
     <meta charset="UTF-8">
     <title>ng-Mad Libs</title>
@@ -18,45 +18,56 @@
             <h1>Automate This</h1>
         </div>
     </header>
-    <section id="inputsNeeded" class="row">
-        <h2>Provide the following words:</h2>
-        <div class="col-md-12">
-          <div class="col-md-2"></div>
-            <input type="text" placeholder="male name" class="col-md-2" ng-model="mName">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Dirty tasks" class="col-md-2" ng-model="dirtyTasks">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Obnoxious celebrity" class="col-md-2" ng-model="obnoxious">
-          <div class="col-md-2"></div>
-        </div>
-        <div class="col-md-12">
-          <div class="col-md-2"></div>
-            <input type="text" placeholder="Job Title" class="col-md-2" ng-model="jobTitle">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Celebrity" class="col-md-2" ng-model="celebrity">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Huge number" class="col-md-2" ng-model="hugeNumber">
-          <div class="col-md-2"></div>
-        </div>
-        <div class="col-md-12">
-          <div class="col-md-2"></div>
-            <input type="text" placeholder="Tedious task" class="col-md-2" ng-model="tediousTask">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Useless skill" class="col-md-2" ng-model="uselessSkill">
-          <div class="col-md-1"></div>
-            <input type="text" placeholder="Adjective"class="col-md-2" ng-model="adjective">
-          <div class="col-md-2"></div>
-        </div>
-    </section>
-    <section class="textArea row">
-      <p>
-        <span>{{mName}}</span> was a <span>{{jobTitle}}</span> who loved technology.  Although he loved parts of his job, he absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTasks}}</span>. So, <span>{{mName}}</span> met with his life mentor <span>{{celebrity}}</span> who told him to learn how to <span>{{uselessSkill}}</span> with Thinkful.  Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so he studied programming instead.
-      </p>
-      <p>
-        What a great decision!  With his new skills, <span>{{mName}}</span> built a(n) <span>{{adjective}}</span> robot name <span>{{obnoxious}}</span> that not only loved <span>{{dirtyTasks}}</span> but did it <span>{{hugeNumber}}</span> faster.
-      </p>
-    </section>
+    <div ng-controller="MainPageController">
+      <section id="inputsNeeded" class="row">
+          <h2>Provide the following words:</h2>
+          <div class="col-md-12">
+            <div class="col-md-2"></div>
+              <input type="text" placeholder="male name" class="col-md-2" ng-model="mName">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Dirty tasks" class="col-md-2" ng-model="dirtyTasks">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Obnoxious celebrity" class="col-md-2" ng-model="obnoxious">
+            <div class="col-md-2"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-2"></div>
+              <input type="text" placeholder="Job Title" class="col-md-2" ng-model="jobTitle">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Celebrity" class="col-md-2" ng-model="celebrity">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Huge number" class="col-md-2" ng-model="hugeNumber">
+            <div class="col-md-2"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-2"></div>
+              <input type="text" placeholder="Tedious task" class="col-md-2" ng-model="tediousTask">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Useless skill" class="col-md-2" ng-model="uselessSkill">
+            <div class="col-md-1"></div>
+              <input type="text" placeholder="Adjective"class="col-md-2" ng-model="adjective">
+            <div class="col-md-2"></div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-3"></div>
+              <button class="col-md-2" ng-click="changeGender('male')">Male</button>
+              {{gender}}
+            <div class="col-md-2"></div>
+              <button class="col-md-2" ng-click="changeGender('female')">Female</button>
+            <div class="col-md-3"></div>
+          </div>
+      </section>
+      <section class="textArea row">
+        <p>
+          <span>{{mName}}</span> was a <span>{{jobTitle}}</span> who loved technology.  Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTasks}}</span>. So, <span>{{mName}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful.  Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead.
+        </p>
+        <p>
+          What a great decision!  With {{hisHer}} new skills, <span>{{mName}}</span> built a(n) <span>{{adjective}}</span> robot name <span>{{obnoxious}}</span> that not only loved <span>{{dirtyTasks}}</span> but did it <span>{{hugeNumber}}</span> faster.
+        </p>
+      </section>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
