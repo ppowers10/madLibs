@@ -56,6 +56,7 @@ section {
 #inputsNeeded {
   border-left: solid 2px black;
   border-right: solid 2px black;
+  border-bottom: solid 2px black;
   padding-bottom : 50px;
 }
 
@@ -65,8 +66,14 @@ input {
 }
 
 .textArea {
-  /*margin-top : 80px;*/
-  border : solid 2px black;
+  border-left: solid 2px black;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.startOver {
+     margin-bottom : 50px;
+    margin-top : -10px;
 }
 
 span {
@@ -89,5 +96,5 @@ h2 {
 }
 
 button {
-  margin-top : 50px;
+  margin-top : 25px;
 }

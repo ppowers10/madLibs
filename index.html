@@ -19,51 +19,61 @@
         </div>
     </header>
     <div ng-controller="MainPageController">
-      <section id="inputsNeeded" class="row">
-          <h2>Provide the following words:</h2>
-          <div class="col-md-12">
-            <div class="col-md-2"></div>
-              <input type="text" placeholder="male name" class="col-md-2" ng-model="mName">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Dirty tasks" class="col-md-2" ng-model="dirtyTasks">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Obnoxious celebrity" class="col-md-2" ng-model="obnoxious">
-            <div class="col-md-2"></div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-2"></div>
-              <input type="text" placeholder="Job Title" class="col-md-2" ng-model="jobTitle">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Celebrity" class="col-md-2" ng-model="celebrity">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Huge number" class="col-md-2" ng-model="hugeNumber">
-            <div class="col-md-2"></div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-2"></div>
-              <input type="text" placeholder="Tedious task" class="col-md-2" ng-model="tediousTask">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Useless skill" class="col-md-2" ng-model="uselessSkill">
-            <div class="col-md-1"></div>
-              <input type="text" placeholder="Adjective"class="col-md-2" ng-model="adjective">
-            <div class="col-md-2"></div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-3"></div>
-              <button class="col-md-2" ng-click="changeGender('male')">Male</button>
-              {{gender}}
-            <div class="col-md-2"></div>
-              <button class="col-md-2" ng-click="changeGender('female')">Female</button>
-            <div class="col-md-3"></div>
-          </div>
+      <section id="inputsNeeded" class="row" ng-show="hideContent">
+          <h2 class="col-md-6">Provide the following words:</h2> 
+          <div class="col-md-1"></div>
+          <button class="col-md-1" ng-click="changeGender('male')">Male</button>
+          <div class="col-md-1"></div>
+          <button class="col-md-1" ng-click="changeGender('female')">Female</button> 
+          <div class="col-md-2"></div>
+          <form name="inputForm" ng-submit="showFunction()">
+              <div class="col-md-12">
+                <div class="col-md-2"></div>
+                  <input type="text" placeholder="male name" class="col-md-2" ng-model="mName" required>
+                <div class="col-md-1"></div>
+                  <input type="text" placeholder="Dirty tasks" class="col-md-2" ng-model="dirtyTasks" required>
+                <div class="col-md-1"></div>
+                  <input type="text" placeholder="Obnoxious celebrity" class="col-md-2" ng-model="obnoxious" required>
+                <div class="col-md-2"></div>
+              </div>
+              <div class="col-md-12">
+                <div class="col-md-2"></div>
+                  <input type="text" placeholder="Job Title" class="col-md-2" ng-model="jobTitle" required>
+                <div class="col-md-1"></div>
+                  <input type="text" placeholder="Celebrity" class="col-md-2" ng-model="celebrity" required>
+                <div class="col-md-1"></div>
+                  <input type="number" placeholder="Huge number" class="col-md-2" ng-model="hugeNumber" required>
+                <div class="col-md-2"></div>
+              </div>
+              <div class="col-md-12">
+                <div class="col-md-2"></div>
+                  <input type="text" placeholder="Tedious task" class="col-md-2" ng-model="tediousTask" required>
+                <div class="col-md-1"></div>
+                  <input type="text" placeholder="Useless skill" class="col-md-2" ng-model="uselessSkill" required>
+                <div class="col-md-1"></div>
+                  <input type="text" placeholder="Adjective"class="col-md-2" ng-model="adjective" required>
+                <div class="col-md-2"></div>
+              </div>
+              <div class="col-md-12">
+                <div class="col-md-8"></div>
+                 <input type="submit" value="Generate Mad Lib" class="col-md-2">
+                <div class="col-md-2"></div>
+              </div>
+          </form>
+          
       </section>
-      <section class="textArea row">
+      <section class="textArea row" ng-show="showContent">
         <p>
           <span>{{mName}}</span> was a <span>{{jobTitle}}</span> who loved technology.  Although {{heShe}} loved parts of {{hisHer}} job, {{heShe}} absolutely hated <span>{{tediousTask}}</span> and <span>{{dirtyTasks}}</span>. So, <span>{{mName}}</span> met with {{hisHer}} life mentor <span>{{celebrity}}</span> who told {{himHer}} to learn how to <span>{{uselessSkill}}</span> with Thinkful.  Thinkful didn't offer a course on <span>{{uselessSkill}}</span> so {{heShe}} studied programming instead.
         </p>
         <p>
           What a great decision!  With {{hisHer}} new skills, <span>{{mName}}</span> built a(n) <span>{{adjective}}</span> robot name <span>{{obnoxious}}</span> that not only loved <span>{{dirtyTasks}}</span> but did it <span>{{hugeNumber}}</span> faster.
         </p>
+        <div class="row">
+            <div class="col-md-8"></div>
+             <button class="col-md-2 startOver" ng-click="showFunctionAndReset()">Start Over</button>
+            <div class="col-md-2"></div>
+          </div>
       </section>
     </div>
 
